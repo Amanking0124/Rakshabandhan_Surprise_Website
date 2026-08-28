@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Favourite Drama Queen ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <div class="background">
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+    <div class="glow glow-three"></div>
+  </div>
+  <div class="floating-container" id="floatingIcons"></div>
+  <div class="grain"></div>
+
+  <button class="music-btn" id="musicBtn" title="Toggle Music">♪</button>
+
+  <!-- PAGE 1 : QUIZ -->
+  <section id="page1" class="page page-one">
+    <div class="quiz-wrapper">
+      <div class="eyebrow">✦ TOP SECRET SIBLING FILE ✦</div>
+      <div class="rakhi-symbol">🪷</div>
+      <h1>Hey,<br><span>Drama Queen.</span></h1>
+      <p class="intro-text">Before you see your Raksha Bandhan surprise, there's one tiny problem...</p>
+      
+      <div class="warning">
+        <span>⚠</span> YOU MUST PROVE YOU ACTUALLY KNOW YOUR BROTHER.
+      </div>
+
+      <div class="quiz-card" id="quizCard">
+        <div class="quiz-top">
+          <div>
+            <span class="small-label">SIBLING VERIFICATION</span>
+            <strong id="questionNumber">QUESTION 01 / 05</strong>
+          </div>
+          <div class="score">
+            <span>SCORE</span>
+            <strong id="score">0</strong>
+          </div>
+        </div>
+
+        <div class="progress">
+          <div id="progressBar"></div>
+        </div>
+
+        <div class="question-area">
+          <p class="question" id="question">Loading question...</p>
+          <div class="options" id="options"></div>
+          <div class="feedback" id="feedback"></div>
+          <button class="next-btn" id="nextBtn" disabled>
+            Next Question <span>→</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="success-card hidden" id="successCard">
+        <div class="success-icon">✓</div>
+        <div class="success-label">ACCESS GRANTED</div>
+        <h2>Okay...<br>You actually know me. 😭</h2>
+        <p>5 out of 5. No cheating detected.<br>Your surprise is officially unlocked.</p>
+        <button class="unlock-btn" id="unlockBtn">
+          Enter Your Surprise <span>→</span>
+        </button>
+      </div>
+
+      <p class="bottom-warning">NO GOOGLE • NO CHEATING • NO HELP FROM MOM</p>
+    </div>
+  </section>
+
+  <!-- PAGE 2 : SURPRISE -->
+  <section id="page2" class="page page-two hidden">
+    <div class="surprise-hero">
+      <div class="eyebrow">✦ FILE UNLOCKED ✦</div>
+      <h2>Fine.<br><span>This one's for you. ❤️</span></h2>
+      <p>Scroll down. And don't pretend you're not getting emotional.</p>
+      <div class="scroll-indicator">↓</div>
+    </div>
+
+    <!-- 01 : THE LETTER -->
+    <section class="content-section">
+      <div class="section-label">01 — THE TRUTH</div>
+      <h3>Congratulations.<br>You survived <i>another year</i> of me.</h3>
+      
+      <div class="letter-card">
+        <div class="letter-header">
+          <span>OFFICIAL SIBLING STATEMENT</span>
+          <span>R♡</span>
+        </div>
+        <div class="letter-body">
+          <p class="letter-opening">Dear Sister,</p>
+          <p>First of all, please appreciate the effort it took for me to make an entire website instead of simply sending <strong>“Happy Rakhi”</strong> on WhatsApp like a normal person.</p>
+          <p>You're annoying. You're dramatic. You somehow manage to turn a two-minute argument into a full courtroom case.</p>
+          <p>You steal my stuff, disturb my peace, and somehow always manage to prove that you're right — even when you're very obviously wrong.</p>
+          <p>And somehow, despite all of that, you're still my favourite person to irritate.</p>
+          <p>So yes, I'll protect you, support you, and have your back. But I reserve the right to roast you immediately afterwards.</p>
+          <p class="signature">Happy Raksha Bandhan ❤️<br><span>Your unpaid bodyguard & professional irritator.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 : INTERACTIVE GIFTS & COUPONS -->
+    <section class="content-section">
+      <div class="section-label">02 — SPECIAL SURPRISES</div>
+      <h3>Tap to open your<br><i>Rakhi Mystery Gifts</i> 🎁</h3>
+      
+      <div class="gifts-grid">
+        <div class="gift-item" onclick="revealGift(this, '🍕 Free Treat Voucher: One meal fully sponsored by me!')">
+          <div class="gift-box-icon">🎁</div>
+          <div class="gift-status">Box #1 (Tap to open)</div>
+        </div>
+        <div class="gift-item" onclick="revealGift(this, '🛡️ Immunity Card: Win any one argument automatically!')">
+          <div class="gift-box-icon">🎁</div>
+          <div class="gift-status">Box #2 (Tap to open)</div>
+        </div>
+        <div class="gift-item" onclick="revealGift(this, '🚗 Chauffeur Duty: Free ride & errand runner for a day!')">
+          <div class="gift-box-icon">🎁</div>
+          <div class="gift-status">Box #3 (Tap to open)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 : MEMORIES GALLERY -->
+    <section class="content-section">
+      <div class="section-label">03 — PROOF WE'RE RELATED</div>
+      <h3>Somehow, we're<br><i>still a team.</i></h3>
+      
+      <div class="polaroid-grid">
+        <div class="polaroid-card">
+          <div class="img-wrapper">
+            <img src="https://images.unsplash.com/photo-1504150558240-0b4fd8946624?auto=format&fit=crop&w=800&q=80" alt="Memory 1">
+          </div>
+          <div class="polaroid-caption">Chaos, but make it family. 💫</div>
+        </div>
+
+        <div class="polaroid-card">
+          <div class="img-wrapper">
+            <img src="https://images.unsplash.com/photo-1472162072942-cd5147eb3902?auto=format&fit=crop&w=800&q=80" alt="Memory 2">
+          </div>
+          <div class="polaroid-caption">Partners in crime since day 1 🕵️‍♂️</div>
+        </div>
+
+        <div class="polaroid-card">
+          <div class="img-wrapper">
+            <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=800&q=80" alt="Memory 3">
+          </div>
+          <div class="polaroid-caption">Annoying each other forever ☕</div>
+        </div>
+
+        <div class="polaroid-card">
+          <div class="img-wrapper">
+            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80" alt="Memory 4">
+          </div>
+          <div class="polaroid-caption">Same madness, different day ✨</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 : FINAL ROAST & WISHES -->
+    <section class="final-section">
+      <div class="final-rakhi">🪷</div>
+      <div class="section-label">04 — FINE, I LOVE YOU</div>
+      <h3>Happy Raksha Bandhan,<br><span>Madam. ❤️</span></h3>
+      <p>May you get everything you want.<br>May you always stay happy.<br>And yes... I'll always have your back.</p>
+
+      <button class="btn confetti-blast-btn" id="confettiBtn">Send Rakhi Love & Confetti 🎉</button>
+      <br><br>
+      <button class="restart-btn" id="restartBtn">Replay The Surprise ↻</button>
+      
+      <div class="footer">Made with love & sibling chaos.</div>
+    </section>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
